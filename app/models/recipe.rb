@@ -5,6 +5,13 @@ class Recipe < ActiveRecord::Base
   accepts_nested_attributes_for :quantities, :reject_if => :all_blank, :allow_destroy => true
   accepts_nested_attributes_for :ingredients, :reject_if => lambda { |ing| ing[:content].blank? }
 
+  # Filter for Recipes containing at least one ingredient in a set of ingredients
+  scope :with_ingredient_in, 
+    lambda { |ingredients| Recipe
+                            .joins{:quantities}
+                            .where(ingredient_id: ingredients.map {|i| i.ingredient_id} )
+                            .limit(20) }
+
   validates :title, :directions, :url, :presence => true
   # ! Ensure that per recipe creation, you don't create duplicate ingredient records
 

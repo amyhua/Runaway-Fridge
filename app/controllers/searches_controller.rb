@@ -41,10 +41,11 @@ class SearchesController < ApplicationController
   # POST /searches.json
   def create
     @search = Search.new(params[:search])
+    @recipes = Recipe.with_ingredient_in(@search.ingredients) # Recipe results
 
     respond_to do |format|
       if @search.save
-        format.html { redirect_to @search, notice: 'Search was successfully created.' }
+        format.html { redirect_to @search, notice: 'Search Results' }
         format.json { render json: @search, status: :created, location: @search }
       else
         format.html { render action: "new" }
