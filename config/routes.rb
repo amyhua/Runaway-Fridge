@@ -2,7 +2,7 @@ EatSumthin::Application.routes.draw do
   resources :searches
 
 
-  root :to => "recipes#index"
+  root :to => "searches#new"
   resources :recipes
 
 
