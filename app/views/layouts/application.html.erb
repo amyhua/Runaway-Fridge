@@ -4,9 +4,17 @@
   <title>EatSumthin</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag :cocoon %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<% flash.each do |key, value| %>
+  <div class='flash' id='<%= key %>'>
+    <%= value %>
+  </div>
+<% end %>
+
 
 <%= yield %>
 

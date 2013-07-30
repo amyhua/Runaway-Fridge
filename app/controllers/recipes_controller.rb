@@ -14,6 +14,7 @@ class RecipesController < ApplicationController
   # GET /recipes/1.json
   def show
     @recipe = Recipe.find(params[:id])
+    @recipe_quantities = Quantity.where_recipe(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -26,10 +27,6 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @recipe }
-    end
   end
 
   # GET /recipes/1/edit
@@ -60,6 +57,7 @@ class RecipesController < ApplicationController
 
     respond_to do |format|
       if @recipe.update_attributes(params[:recipe])
+
         format.html { redirect_to @recipe, notice: 'Recipe was successfully updated.' }
         format.json { head :no_content }
       else
@@ -80,4 +78,8 @@ class RecipesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  private
+  
+  
 end

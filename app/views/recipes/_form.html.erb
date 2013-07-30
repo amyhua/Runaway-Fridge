@@ -1,21 +1,61 @@
-<%= form_for(@recipe) do |f| %>
-  <% if @recipe.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+<%= form_for @recipe, html: {class: "form-horizontal"} do |f| %>
+   <ul>
+    <fieldset id="recipe-meta">
+      <li class="control-group"><h3>
+        <%= f.label :title, "Recipe Name", class: "control-label" %>
+        <div class="controls"><%= f.text_field :title %></div></h3>
+      </li>
+      <li class="control-group">
+        <%= f.label :directions, "Recipe URL", class: "control-label" %>
+        <div class="controls"><%= f.text_field :url%></div>
+      </li>
+      <li class="control-group">
+        <%= f.label :directions, "Recipe Directions", class: "control-label" %>
+        <div class="controls"><%= f.text_area :directions, rows: 10 %></div>
+      </li>
+      <li class="control-group">
+        <%= f.label :image, "Recipe Image (URL)", class: "control-label" %>
+        <div class="controls"><%= f.text_field :image %></div>
+      </li>
+      <li class="control-group">
+        <%= f.label :servings, "Number of Servings", class: "control-label" %>
+        <div class="controls"><%= f.number_field :servings, :precision => 0 %></div>
+      </li>
+      <li class="control-group">
+        <%= f.label :time, "Total Time to Prep and Cook (in minutes)", class: "control-label" %>
+        <div class="controls"><%= f.number_field :time, :precision => 0 %></div>
+      </li>
+      <li class="control-group">
+        <%= f.label :time, "Rating out of 5 Stars", class: "control-label" %>
+        <div class="controls"><%= f.text_field :rating %></div>
+      </li>
+      <li class="control-group">
+        <%= f.label :time, "Number of Reviews", class: "control-label" %>
+        <div class="controls"><%= f.text_field :reviewcount, :precision => 0 %></div>
+      </li>
 
-      <ul>
-      <% @recipe.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_area :name %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    </fieldset> 
+   </ul>
+
+  <ul>
+  	<li><h3>Ingredients</h3></li>
+  	<li>
+	  <fieldset id="recipe-ingredients"> 
+	    <ol>
+	    	
+	        <%= f.fields_for :quantities do |quantity| %> 
+	 	       <%= render 'quantity_fields', f: quantity %> 
+	  	    <% end %> 
+	    </ol> 
+	    <%= link_to_add_association 'Add Ingredient', f, :quantities, 
+	    'data-association-insertion-node' => "#recipe-ingredients ol", 
+	    'data-association-insertion-method' => "append", 
+	    :wrap_object => Proc.new {|quantity| quantity.build_ingredient; quantity } %> 
+	  </fieldset>   		
+  	</li>  	
+ 
+   <li id="submit"><%= f.submit %></li> 
+  </ul>
+
 <% end %>
