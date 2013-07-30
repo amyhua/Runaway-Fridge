@@ -1,4 +1,7 @@
 EatSumthin::Application.routes.draw do
+  resources :searches
+
+
   root :to => "recipes#index"
   resources :recipes
 
