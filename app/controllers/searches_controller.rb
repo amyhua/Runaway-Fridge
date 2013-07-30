@@ -41,6 +41,7 @@ class SearchesController < ApplicationController
   # POST /searches.json
   def create
     @search = Search.new(params[:search])
+
     @recipes = Recipe.with_ingredient_in(@search.ingredients) # Recipe results
 
     respond_to do |format|
