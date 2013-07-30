@@ -17,7 +17,7 @@
 				<div class="recipe-ingredients-list">
 				<% @ingredients = @recipe.ingredients.sort { |a,b| a.name <=> b.name } %>
 				<% @ingredients.each do |ingred| %>
-					<div class="recipe-ingredients-tokens" id="<%= ingred.name %>"><%= ingred.name %></div>
+					<div class="recipe-ingredients tokens" id="<%= ingred.name %>"><%= ingred.name %></div>
 				<% end %>					
 				</div>
 				
@@ -31,7 +31,7 @@
 		<div class="middle-detail" id="ingredients">
 			<ul>
 			<% @recipe.quantities.each do |quantity| %>
-				<li class="quantity-content"><%= quantity.content %></li>
+				<li class="quantity-content tokens"><%= quantity.content %></li>
 			<% end %>
 			</ul>
 		</div>
