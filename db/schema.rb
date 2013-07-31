@@ -30,6 +30,14 @@ ActiveRecord::Schema.define(:version => 20130730185119) do
   add_index "quantities", ["ingredient_id"], :name => "index_quantities_on_ingredient_id"
   add_index "quantities", ["recipe_id"], :name => "index_quantities_on_recipe_id"
 
+  create_table "recipe_ingredients", :force => true do |t|
+    t.integer  "ingredient_id"
+    t.integer  "recipe_id"
+    t.string   "ingredient_text"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
   create_table "recipes", :force => true do |t|
     t.string   "title"
     t.string   "image"
