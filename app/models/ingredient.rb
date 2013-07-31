@@ -5,4 +5,8 @@ class Ingredient < ActiveRecord::Base
   has_and_belongs_to_many :searches
 
   # define method to convert raw name given from form into its singular form
+  
+  # Find all ingredients across a certain set of recipes
+  scope :in_recipes, lambda { |recipes| join(:quantities) 
+                                        .where(recipe_id: recipes.map {|r| r.recipe_id} ) }
 end

@@ -7,11 +7,10 @@ class Recipe < ActiveRecord::Base
 
   # Filter for Recipes containing at least one ingredient in a set of ingredients
   scope :with_ingredient_in, 
-    lambda { |ingredients| Recipe
-                            .joins{:quantities}
+    lambda { |ingredients|  joins{:quantities}
                             .where(ingredient_id: ingredients.map {|i| i.ingredient_id} )
                             .limit(20) }
-
+  
   validates :title, :directions, :url, :presence => true
   # ! Ensure that per recipe creation, you don't create duplicate ingredient records
 
