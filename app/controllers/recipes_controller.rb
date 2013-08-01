@@ -38,7 +38,7 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(params[:recipe])
     for ingredient in @recipe.ingredients
-      @name = ingredient.name.pluralize.downcase
+      @name = ingredient.name.downcase
       ingredient.name = @name
     end
 

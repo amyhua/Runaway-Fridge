@@ -33,10 +33,11 @@ gem 'jquery-rails'
 group :test, :development do
   gem 'rspec-rails', '~> 2.11'
   gem 'launchy'
+  gem 'capybara', '>= 2.0.2'
+  gem 'capybara-webkit'
 end
 
 group :test do
-  gem 'capybara', '1.1.2'
   gem 'factory_girl', '2.6.4'
   gem 'simplecov', :require => false
 end

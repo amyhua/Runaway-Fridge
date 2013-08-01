@@ -180,7 +180,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  capybara (= 1.1.2)
+  capybara
   cocoon
   coffee-rails (~> 3.2.1)
   devise (= 2.1.0)
