@@ -1,0 +1,11 @@
+
+TESTING
+* Can't test jquery/js features of nested form using Capybara. Must find alternative. Installed Capybara-Webkit, still need to learn it, as a way of testing JS apps.
+
+DATA
+* 
+
+To do:
+
+* Seed data with ingredients, mock recipes (with common ingredients, for search results)
+

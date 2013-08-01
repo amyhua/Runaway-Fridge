@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EatSumthin</title>
+<link href="/assets/application.css" media="all" rel="stylesheet" type="text/css">
+<script src="/assets/application.js" type="text/javascript"></script><script src="/assets/cocoon.js" type="text/javascript"></script><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script><script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js" type="text/javascript"></script><script src="/assets/application.js" type="text/javascript"></script>
+</head>
+<body>
+
+
+
+<h1>New recipe</h1>
+
+<form accept-charset="UTF-8" action="/recipes" class="form-horizontal" id="new_recipe" method="post">
+<div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+   <ul><fieldset id="recipe-meta">
+<li class="control-group">
+<h3>
+        <label class="control-label" for="recipe_title">Recipe Name</label>
+        <div class="controls"><input id="recipe_title" name="recipe[title]" size="30" type="text" value="Stuffed Zucchini 2"></div>
+</h3>
+      </li>
+      <li class="control-group">
+        <label class="control-label" for="recipe_directions">Recipe URL</label>
+        <div class="controls"><input id="recipe_url" name="recipe[url]" size="30" type="text"></div>
+      </li>
+      <li class="control-group">
+        <label class="control-label" for="recipe_directions">Recipe Directions</label>
+        <div class="controls"><textarea cols="40" id="recipe_directions" name="recipe[directions]" rows="10">This is how you make zucchini!</textarea></div>
+      </li>
+      <li class="control-group">
+        <label class="control-label" for="recipe_image">Recipe Image (URL)</label>
+        <div class="controls"><input id="recipe_image" name="recipe[image]" size="30" type="text" value="http://images.media-allrecipes.com/userphotos/250x250/00/88/42/884218.jpg"></div>
+      </li>
+      <li class="control-group">
+        <label class="control-label" for="recipe_servings">Number of Servings</label>
+        <div class="controls"><input id="recipe_servings" name="recipe[servings]" precision="0" type="number" value="3"></div>
+      </li>
+      <li class="control-group">
+        <label class="control-label" for="recipe_time">Total Time to Prep and Cook (in minutes)</label>
+        <div class="controls"><input id="recipe_time" name="recipe[time]" precision="0" type="number" value="162"></div>
+      </li>
+      <li class="control-group">
+        <label class="control-label" for="recipe_time">Rating out of 5 Stars</label>
+        <div class="controls"><input id="recipe_rating" name="recipe[rating]" size="30" type="text"></div>
+      </li>
+      <li class="control-group">
+        <label class="control-label" for="recipe_time">Number of Reviews</label>
+        <div class="controls"><input id="recipe_reviewcount" name="recipe[reviewcount]" precision="0" size="30" type="text"></div>
+      </li>
+
+
+    </fieldset></ul>
+<ul>
+<li><h3>Ingredients</h3></li>
+  	<li>
+	  <fieldset id="recipe-ingredients">
+<ol></ol>
+<a href="#" class="add_fields" data-association-insertion-method="append" data-association-insertion-node="#recipe-ingredients ol" data-association-insertion-template='&lt;li class="control-group nested-fields"&gt;
+  &lt;div class="controls"&gt;
+    &lt;label for="recipe_quantities_attributes_new_quantities_content"&gt;Ingredient Text (including Amount):&lt;/label&gt;
+    &lt;input id="recipe_quantities_attributes_new_quantities_content" name="recipe[quantities_attributes][new_quantities][content]" size="30" type="text" /&gt;
+
+	&lt;label for="recipe_quantities_attributes_new_quantities_name"&gt;Ingredient Name&lt;/label&gt; 
+    
+      &lt;input id="recipe_quantities_attributes_new_quantities_ingredient_attributes_name" name="recipe[quantities_attributes][new_quantities][ingredient_attributes][name]" size="30" type="text" /&gt;
+ 
+    &lt;input id="recipe_quantities_attributes_new_quantities__destroy" name="recipe[quantities_attributes][new_quantities][_destroy]" type="hidden" /&gt;&lt;a href="#" class="remove_fields dynamic"&gt;Remove&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/li&gt;' data-association="quantity" data-associations="quantities">Add Ingredient</a> 
+	  </fieldset>
+</li>  	
+ 
+   <li id="submit"><input name="commit" type="submit" value="Create Recipe"></li> 
+  </ul>
+</form>
+
+<a href="/recipes">Back</a>
+
+
+</body>
+</html>
