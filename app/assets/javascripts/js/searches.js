@@ -1,7 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 
-$(document).ready(function() {
+/*$(document).ready(function() {
   console.log("ready");
   var temp = $('#search_query');
   var index = 0; 
@@ -16,4 +16,4 @@ $(document).ready(function() {
       console.log(ingredient);
     }
   });
-});
+});*/

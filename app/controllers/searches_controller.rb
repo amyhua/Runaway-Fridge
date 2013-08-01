@@ -15,8 +15,8 @@ class SearchesController < ApplicationController
   def show
     @search = Search.find(params[:id])
     @recipes = Recipe.with_ingredient_in(@search.ingredients) # Recipe results
-    
-    
+   # @search = Search.find(params[:id])
+  #@results = Recipe.with_ingredient_in(@ingred_arr)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -29,12 +29,13 @@ class SearchesController < ApplicationController
   def new
     @search = Search.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @search }
-    end
+    #respond_to do |format|
+    #  
+    #  format.html 
+    #  format.json { render json: @search }
+    # end
   end
-
+ 
   # GET /searches/1/edit
   def edit
     @search = Search.find(params[:id])
@@ -43,19 +44,24 @@ class SearchesController < ApplicationController
   # POST /searches
   # POST /searches.json
   def create
-    @search = Search.new(params[:search])
-
-    @recipes = Recipe.with_ingredient_in(@search.ingredients) # Recipe results
-
-    respond_to do |format|
-      if @search.save
-        format.html { redirect_to @search, notice: 'Search Results' }
-        format.json { render json: @search, status: :created, location: @search }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @search.errors, status: :unprocessable_entity }
-      end
+    @search = Search.new(params[:search]) #query string
+    @query_arr = @search.query.split(",")
+    @ingred_arr = []
+    for ingred in @query_arr
+      #construct ingredients object
+      temp = Ingredient.find_by_name(ingred)
+      @ingred_arr.push(temp);
     end
+    #redirect_to @search
+    #respond_to do |format|
+    #  if @search.save
+     #   format.html { redirect_to @search_, notice: 'Search Results' }
+     #   format.json { render json: @search, status: :created, location: @search }
+     # else
+        #format.html { render action: "new" }
+        #format.json { render json: @search.errors, status: :unprocessable_entity }
+     # end
+    #end
   end
 
   # PUT /searches/1
@@ -85,4 +91,9 @@ class SearchesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+   #private
+    #def check_ingredients
+     # @ingredient_tag = params[:ingredient]
+   # end
 end
