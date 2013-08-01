@@ -13,8 +13,8 @@ class SearchesController < ApplicationController
   # GET /searches/1
   # GET /searches/1.json
   def show
-    #@search = Search.find(params[:id])
-    @recipes = Recipe.with_ingredient_in(@ingred_arr) # Recipe results
+    @search = Search.find(params[:search])
+    #@recipes = Recipe.with_ingredient_in(@ingred_arr) # Recipe results
    # @search = Search.find(params[:id])
   #@results = Recipe.with_ingredient_in(@ingred_arr)
 
@@ -50,9 +50,12 @@ class SearchesController < ApplicationController
     for ingred in @query_arr
       #construct ingredients object
       temp = Ingredient.find_by_name(ingred)
-      @ingred_arr.push(temp);
+      #@ingred_arr.push(temp)
+      @search.ingredients.push(temp)
     end
-    redirect_to @ingred_arr
+
+    @search.save
+    redirect_to @search
     #respond_to do |format|
     #  if @search.save
      #   format.html { redirect_to @search_, notice: 'Search Results' }
