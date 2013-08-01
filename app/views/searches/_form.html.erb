@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :query, "Enter Your Ingredients" %><br />
-    <%= f.text_area :query %>
+    <%= f.label :query, "Enter Your Ingredients", :id=>"enter" %><br />
+    <%= f.text_field :query, :size=>"100", :width=>"100" %>
   </div>
   <!--
   <script type = "text/javascript">
@@ -39,7 +39,7 @@
     });
   });
   </script>-->
-  <div class="actions">
-    <%= f.submit "Search" %>
+  <div class="actions" >
+    <%= f.submit "Find Recipes", :class=>"button" %>
   </div>
 <% end %>

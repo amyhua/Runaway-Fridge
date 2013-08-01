@@ -1,18 +1,19 @@
 <%= render 'form' %>
 <p id="notice"><%= notice %></p>
-
-<p>
-	
-</p>
-
-
-<p>
-  <b>Query:</b>
-  <%= @search.ingredients %>
-</p>
+<div id="query">
+  <b>Ingredients:</b>
+  <%= @search.query %>
+</div>
 <p>
 	<b>Results:</b>
-	<%= @recipes %>
+	<% @recipes.each do |recipe| %>
+  <tr>
+    <td><%= recipe.title %></td>
+    <td><%= link_to 'Show', recipe %></td>
+    <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+    <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+  <% end %>
 </p>
 
 

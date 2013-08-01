@@ -15,9 +15,6 @@ class SearchesController < ApplicationController
   def show
     @search = Search.find(params[:id])
     #@recipes = Recipe.with_ingredient_in(@ingred_arr) # Recipe results
-   # @search = Search.find(params[:id])
-  #@results = Recipe.with_ingredient_in(@ingred_arr)
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @search }
