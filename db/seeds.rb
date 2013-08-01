@@ -16,5 +16,17 @@ hot_dogs = Recipe.create([{ title: 'Fabulous Hot Dogs'},
                           { reviewcount: 25 },
                           ])
 
-                          
+root = Dir.pwd
+filepath = '/db/seed_ingredients.txt'
+path = root + filepath
+
+# Seed ingredients data
+Ingredient.delete_all
+open(path) do |seed_ingredients|
+  seed_ingredients.read.each_line do |seed_ingredient|
+    name = seed_ingredient.chomp
+    Ingredient.create!(:name => name)
+  end  
+end
+
                           

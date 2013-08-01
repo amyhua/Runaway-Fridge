@@ -1,0 +1,163 @@
+apples
+avocados
+bananas
+berries
+broccoli
+carrots
+celery
+cucumbers
+garlic
+grapefruit
+grapes
+lemons
+limes
+lettuce
+melons
+mushrooms
+onions
+oranges
+peppers
+potatoes
+squash
+zucchini
+tomatoes
+bacon
+steak
+beef
+chicken
+deli meat
+fish
+ground beef
+ham
+hot dogs
+pork
+sausage
+turkey
+bagels
+bread
+cake
+cookies
+dinner rolls
+donuts
+french bread
+hamburger buns
+hot dog buns
+muffins
+pastries
+pie
+pita bread
+tortillas
+cold cereal
+oatmeal
+creamed wheat
+pancake mix
+biscuits
+butter
+cheese
+cookie dough
+cream cheese
+dips
+eggs
+half and half
+milk
+sour cream
+whip cream
+yogurt
+chicken
+desserts
+dinners
+fish
+fruits
+ice
+ice cream
+ice pops
+juice
+lasagna
+pie
+pizza
+vegetables
+waffles
+water
+juice
+soda
+coffee
+tea
+couscous
+hamburger helper
+lasagna
+mac and cheese
+macaroni
+noodle mixes
+ramen
+rice (brown)
+rice (white)
+rice mixes
+spaghetti
+baking powder
+baking soda
+bread crumbs
+brownie mix
+cake mix
+canned milk
+chocolate chips
+cocoa
+cornmeal
+cornstarch
+flour
+food coloring
+frosting
+muffin mix
+oatmeal
+pie crust
+shortening
+sugar (brown)
+sugar (powder)
+sugar (white)
+vanilla
+yeast
+applesauce
+beans
+chili
+fruits
+mushrooms
+olives
+soup
+tomato sauce
+tuna
+vegetables
+vegetable oil
+soy sauce
+olive oil
+vinegar
+bbq sauce
+hot sauce
+spaghetti sauce
+syrup
+croutons
+honey
+jam / jelly
+ketchup
+mayonnaise
+mustard
+peanut butter
+pickles
+salad dressing
+salsa
+salt
+pepper
+cinnamon
+candy
+cookies
+crackers
+dip / salsa
+dried fruits
+fruit snacks
+graham crackers
+granola bars
+nuts / seeds
+popcorn
+potato chips
+pretzels
+pudding
+raisins
+tortilla chips
