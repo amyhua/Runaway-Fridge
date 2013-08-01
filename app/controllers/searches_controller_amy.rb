@@ -1,4 +1,8 @@
 class SearchesController < ApplicationController
+
+  # Amy: working on the show action.
+  
+  
   # GET /searches
   # GET /searches.json
   def index
@@ -14,9 +18,6 @@ class SearchesController < ApplicationController
   # GET /searches/1.json
   def show
     @search = Search.find(params[:id])
-    @recipes = Recipe.with_ingredient_in(@search.ingredients) # Recipe results
-    
-    
 
     respond_to do |format|
       format.html # show.html.erb

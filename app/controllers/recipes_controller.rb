@@ -14,7 +14,6 @@ class RecipesController < ApplicationController
   # GET /recipes/1.json
   def show
     @recipe = Recipe.find(params[:id])
-    @recipe_quantities = Quantity.where_recipe(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -38,6 +37,10 @@ class RecipesController < ApplicationController
   # POST /recipes.json
   def create
     @recipe = Recipe.new(params[:recipe])
+    for ingredient in @recipe.ingredients
+      @name = ingredient.name.pluralize.downcase
+      ingredient.name = @name
+    end
 
     respond_to do |format|
       if @recipe.save

@@ -4,6 +4,7 @@ class Quantity < ActiveRecord::Base
   belongs_to :ingredient
   accepts_nested_attributes_for :ingredient, :reject_if => :all_blank
   
+  scope :with_ingredient_in, lambda { |ingredient| where(ingredient.id = ingredient_id )}
   
   def self.recipe_ingredient_content(recipeid,ingredientid)
     select { |qty| qty.recipe_id == recipeid && qty.ingredient_id == ingredientid}
