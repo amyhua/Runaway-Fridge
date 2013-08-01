@@ -4,8 +4,9 @@
     <%= f.text_field :content %>
 
 	<%= f.label :name, "Ingredient Name" %> 
-    <%= f.fields_for :ingredient do |quantity_ingredient| %>
-      <%= quantity_ingredient.text_field :name %>
+    <%= f.fields_for :ingredients do |ingredient| %>
+      <%= ingredient.collection_select :ingredient_id, Ingredient.find(:all),
+       :id, :name, :prompt => "Select an Ingredient" %>
     <% end %>
  
     <%= link_to_remove_association "Remove", f %>
