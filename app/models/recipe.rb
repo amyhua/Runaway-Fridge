@@ -1,5 +1,6 @@
 class Recipe < ActiveRecord::Base
-  attr_accessible :title, :url, :directions, :image, :servings, :time, :rating, :reviewcount, :quantities_attributes
+  attr_accessible :title, :url, :directions, :image, :servings, :time, :rating, 
+      :reviewcount, :quantities_attributes, :ingredients_attributes
   has_many :quantities
   has_many :ingredients, :through => :quantities
   accepts_nested_attributes_for :quantities, :reject_if => :all_blank, :allow_destroy => true
