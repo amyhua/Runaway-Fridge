@@ -46,11 +46,11 @@ class SearchesController < ApplicationController
   def create
     @search = Search.new(params[:search]) #query string
     @query_arr = @search.query.split(",")
-    @ingred_arr = []
-    for ingred in @query_arr
-      temp = Ingredient.find_by_name(ingred)
-      #@ingred_arr.push(temp)
-      @search.ingredients.push(temp)
+    @s = @search.ingredients
+    for word in @query_arr
+      #construct ingredients object
+      ing = Ingredient.find_by_name(word)
+      @s.push(ing)
     end
 
     @search.save
