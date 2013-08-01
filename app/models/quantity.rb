@@ -1,5 +1,5 @@
 class Quantity < ActiveRecord::Base
-  attr_accessible :content, :ingredient, :ingredient_attributes
+  attr_accessible :content, :ingredient, :ingredient_attributes, :recipe
   belongs_to :recipe
   belongs_to :ingredient
   accepts_nested_attributes_for :ingredient, :reject_if => :all_blank

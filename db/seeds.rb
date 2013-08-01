@@ -29,4 +29,37 @@ open(path) do |seed_ingredients|
   end  
 end
 
-                          
+filepath2 = '/db/seed_recipes.txt'
+path2 = root + filepath2
+#Seed recipes data
+Recipe.delete_all
+open(path2) do |seed_recipes|
+  seed_recipes.read.each_line do |seed_recipe|
+    url, title = seed_recipe.split('|')
+    Recipe.create!(:title => title, :url => url)
+  end
+end
+
+#Seed ingredients and quantity
+Quantity.delete_all
+for each_recipe in Recipe.all
+  i = 0
+  ingredient_num = rand(1..3)
+  while i < ingredient_num do
+    i+=1
+    ingredient_id = Ingredient.find_by_name("apples").id+rand(0..165)
+    each_ingredient = Ingredient.find_by_id(ingredient_id)
+    each_recipe.ingredients.push(each_ingredient)
+    Quantity.create!(:recipe => each_recipe, :ingredient => each_ingredient, :content => "1lb")
+  end
+end
+#all_quantity = Quantity.all.uniq
+#Quantity.all = all_quantity
+
+
+
+
+
+
+
+

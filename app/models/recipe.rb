@@ -9,7 +9,7 @@ class Recipe < ActiveRecord::Base
 #  scope :with_ingredient_in, 
  #   lambda { |ingredients| joins{:quantities}.where(quantities.ingredient_id : ingredients.map {|i| i.id} ) }
   
-  validates :title, :directions, :url, :presence => true
+  validates :title, :url, :presence => true
   # ! Ensure that per recipe creation, you don't create duplicate ingredient records
 
   def self.has_ingredients?(ingredients)

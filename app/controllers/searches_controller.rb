@@ -13,7 +13,7 @@ class SearchesController < ApplicationController
   # GET /searches/1
   # GET /searches/1.json
   def show
-    @search = Search.find(params[:search])
+    @search = Search.find(params[:id])
     #@recipes = Recipe.with_ingredient_in(@ingred_arr) # Recipe results
    # @search = Search.find(params[:id])
   #@results = Recipe.with_ingredient_in(@ingred_arr)
@@ -48,7 +48,6 @@ class SearchesController < ApplicationController
     @query_arr = @search.query.split(",")
     @ingred_arr = []
     for ingred in @query_arr
-      #construct ingredients object
       temp = Ingredient.find_by_name(ingred)
       #@ingred_arr.push(temp)
       @search.ingredients.push(temp)
@@ -56,15 +55,6 @@ class SearchesController < ApplicationController
 
     @search.save
     redirect_to @search
-    #respond_to do |format|
-    #  if @search.save
-     #   format.html { redirect_to @search_, notice: 'Search Results' }
-     #   format.json { render json: @search, status: :created, location: @search }
-     # else
-        #format.html { render action: "new" }
-        #format.json { render json: @search.errors, status: :unprocessable_entity }
-     # end
-    #end
   end
 
   # PUT /searches/1
