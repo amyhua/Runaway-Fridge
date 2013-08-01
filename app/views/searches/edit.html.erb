@@ -1,6 +1,19 @@
-<h1>Editing search</h1>
 
 <%= render 'form' %>
+<p id="notice"><%= notice %></p>
 
-<%= link_to 'Show', @search %> |
+<p>
+	
+</p>
+
+
+<p>
+  <b>Query:</b>
+  <%= @search.ingredients %>
+</p>
+<p>
+	<b>Results:</b>
+	<%= @recipes %>
+</p>
+
 <%= link_to 'Back', searches_path %>

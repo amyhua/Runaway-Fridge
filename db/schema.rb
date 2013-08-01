@@ -11,12 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20130801041108) do
+=======
+ActiveRecord::Schema.define(:version => 20130801223456) do
+>>>>>>> be93e8a06ea5d7d41a0a089e289656c8dd6ce796
 
   create_table "ingredients", :force => true do |t|
     t.string "name"
   end
 
+<<<<<<< HEAD
+=======
+  add_index "ingredients", ["name"], :name => "index_ingredients_on_name"
+
+>>>>>>> be93e8a06ea5d7d41a0a089e289656c8dd6ce796
   create_table "ingredients_searches", :force => true do |t|
     t.integer "ingredient_id"
     t.integer "search_id"

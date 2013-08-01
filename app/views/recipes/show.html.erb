@@ -7,11 +7,15 @@
 		</div>
 		<div class="recipe-description">
 			<div class="top-right" id="recipe-title" ><%= @recipe.title %></div>
-			<div class="top-right" id="recipe-rating">Rating: <%= @recipe.rating.round(1) %> / 5 (<%= @recipe.reviewcount %> Reviews)</div>
+			<div class="top-right" id="recipe-rating"><%= 'Rating: ' + @recipe.rating.round(1).to_s + " / 5 (" + @recipe.reviewcount.to_s + " Reviews)" unless @recipe.rating.nil? %></div>
+			<% if @recipe.time.nil? %>
+			<% else %>
 			<div class="top-right" id="recipe-time">
 				<span class="recipe-time-label">Cook Time:</span>
 				<span class="recipe-time-value"><%= @recipe.time %> minutes</span>
-				</div>
+			</div>
+			<% end %>
+
 			<div class="top-right" id="recipe-ingredients">
 				<span class="recipe-ingredients-label">Made from </span>
 				<div class="recipe-ingredients-list">
