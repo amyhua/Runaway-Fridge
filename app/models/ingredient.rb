@@ -5,6 +5,7 @@ class Ingredient < ActiveRecord::Base
   has_many :recipes, :through => :quantities
 
   has_many :ingredients_searches
+ 
   has_many :searches, :through => :ingredients_searches
 
   # define method to convert raw name given from form into its singular form

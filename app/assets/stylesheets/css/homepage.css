@@ -17,3 +17,20 @@
     font-style: italic;
     font-family: courier;
 }
+
+.puns {
+    float: right;
+    margin-right: 100px;
+    text-align: right;
+    width: 350px;
+    font-size: 20px;
+}
+.pun-quote {
+    color: rgb(247, 247, 247);
+    font-style: italic;
+}
+.pun-author {
+    font-size: 16px;
+    color: white;
+    font-style: italic;
+}

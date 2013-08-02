@@ -1,12 +1,14 @@
 <%= render 'form' %>
 
-<h3><%= @recipes.count %> recipe results</h3>
-
-<span class="recipe-ingredients-label-1">...and their ingredients.
-</span>
-<span class="recipe-ingredients-label-2">Click on an ingredient to filter
-	it out of your search results.
-</span>
+<div class="results-prompt">
+	<h3><%= @recipes.count %> recipe results</h3>
+	
+	<span class="recipe-ingredients-label-1">...and their ingredients.
+	</span>
+	<span class="recipe-ingredients-label-2">Click on an ingredient to filter
+		it out of your search results.
+	</span>
+</div>
 
 <div class="result-ingredients-all">
 	<% @ingredients = [] %>

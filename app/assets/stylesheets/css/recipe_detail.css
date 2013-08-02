@@ -31,6 +31,10 @@
 
 /** RECIPE DETAIL **/
 	
+	.recipe-detail-body {
+    	background-image: none;
+	}
+
 	.recipe-detail{
 		width: 620px;
 	}

@@ -1,8 +1,16 @@
 body{
-  text-align: center;
   background-image: url('fridge.jpg');
   background-size: cover;
 }
+
+.title-2 {
+    text-align: center;
+}
+#new_search {
+    text-align: center;
+}
+
+
 #new{
   position:absolute; 
   top:20%;  
@@ -28,4 +36,17 @@ body{
   padding:20px;
   display: block;
   overflow: hidden;
+}
+
+.search-prompt {
+    text-align: center;
+}
+#enter {
+}
+#enter {}
+.form-input {
+    text-align: center;
+}
+.actions {
+    text-align: center;
 }

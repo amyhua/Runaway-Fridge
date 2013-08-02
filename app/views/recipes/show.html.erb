@@ -1,64 +1,66 @@
-
-<div class="recipe-detail">
-	<div class="top-details">
-		<div class="top-left">
-			<img class="recipe-image" src="<%= @recipe.image %>" alt="<%= @recipe.title %>">
-			<div class="recipe-network">Source: <a href="<%= @recipe.url %>"><%= @recipe.network %></a></div>			
-		</div>
-		<div class="recipe-description">
-			<div class="top-right" id="recipe-title" ><%= @recipe.title %></div>
-			<div class="top-right" id="recipe-rating"><%= 'Rating: ' + @recipe.rating.round(1).to_s + " / 5 (" + @recipe.reviewcount.to_s + " Reviews)" unless @recipe.rating.nil? %></div>
-			<% if @recipe.time.nil? %>
-			<% else %>
-			<div class="top-right" id="recipe-time">
-				<span class="recipe-time-label">Cook Time:</span>
-				<span class="recipe-time-value"><%= @recipe.time %> minutes</span>
+<body class="recipe-detail-body">
+	<div class="recipe-detail">
+		<div class="top-details">
+			<div class="top-left">
+				<img class="recipe-image" src="<%= @recipe.image %>" alt="<%= @recipe.title %>">
+				<div class="recipe-network">Source: <a href="<%= @recipe.url %>"><%= @recipe.network %></a></div>			
 			</div>
-			<% end %>
-
-			<div class="top-right" id="recipe-ingredients">
-				<span class="recipe-ingredients-label">Made from </span>
-				<div class="recipe-ingredients-list">
-				<% @ingredients = @recipe.ingredients.sort { |a,b| a.name <=> b.name } %>
-				<% @ingredients.each do |ingred| %>
-					<div class="recipe-ingredients tokens" id="<%= ingred.name %>"><%= ingred.name %></div>
-				<% end %>					
+			<div class="recipe-description">
+				<div class="top-right" id="recipe-title" ><%= @recipe.title %></div>
+				<div class="top-right" id="recipe-rating"><%= 'Rating: ' + @recipe.rating.round(1).to_s + " / 5 (" + @recipe.reviewcount.to_s + " Reviews)" unless @recipe.rating.nil? %></div>
+				<% if @recipe.time.nil? %>
+				<% else %>
+				<div class="top-right" id="recipe-time">
+					<span class="recipe-time-label">Cook Time:</span>
+					<span class="recipe-time-value"><%= @recipe.time %> minutes</span>
 				</div>
-				
-			</div>			
-		</div>		
-	</div>
-	<div class="middle-details">
-		<div class="middle-detail" id="ingredients-label">
-			<h3 id="ingredients-label-string">Ingredients</h3>	
-			<p>If duplicate ingredients are listed, then the recipe might 
-				require the same ingredient for different parts of your 
-				recipe. See the <a href="<%= @recipe.url %>">original recipe</a> for details.</p>	
+				<% end %>
+	
+				<div class="top-right" id="recipe-ingredients">
+					<span class="recipe-ingredients-label">Made from </span>
+					<div class="recipe-ingredients-list">
+					<% @ingredients = @recipe.ingredients.sort { |a,b| a.name <=> b.name } %>
+					<% @ingredients.each do |ingred| %>
+						<div class="recipe-ingredients tokens" id="<%= ingred.name %>"><%= ingred.name %></div>
+					<% end %>					
+					</div>
+					
+				</div>			
+			</div>		
 		</div>
-		<div class="middle-detail" id="ingredients">
-			<ul>
-			<% @recipe.quantities.each do |quantity| %>
-				<li class="quantity-content tokens"><%= quantity.content %></li>
-			<% end %>
-			</ul>
+		<div class="middle-details">
+			<div class="middle-detail" id="ingredients-label">
+				<h3 id="ingredients-label-string">Ingredients</h3>	
+				<p>If duplicate ingredients are listed, then the recipe might 
+					require the same ingredient for different parts of your 
+					recipe. See the <a href="<%= @recipe.url %>">original recipe</a> for details.</p>	
+			</div>
+			<div class="middle-detail" id="ingredients">
+				<ul>
+				<% @recipe.quantities.each do |quantity| %>
+					<li class="quantity-content tokens"><%= quantity.content %></li>
+				<% end %>
+				</ul>
+			</div>
 		</div>
-	</div>
-	<div class="bottom-details">
-		<div class="bottom-detail" id="directions-label">
-			<h3 id="directions-label-string">Directions</h3>		
+		<div class="bottom-details">
+			<div class="bottom-detail" id="directions-label">
+				<h3 id="directions-label-string">Directions</h3>		
+			</div>
+			<div class="bottom-detail" id="directions">
+				<p id="directions-text">
+					<%= simple_format(@recipe.directions) %>
+				</p>
+			</div>
 		</div>
-		<div class="bottom-detail" id="directions">
-			<p id="directions-text">
-				<%= simple_format(@recipe.directions) %>
-			</p>
+		<div class="tail">
+			<%= link_to 'Edit', edit_recipe_path(@recipe), {:class=>"link-padded"} %>
+			<%= link_to 'Back', recipes_path, {:class=>"link-padded"} %>		
 		</div>
-	</div>
-	<div class="tail">
-		<%= link_to 'Edit', edit_recipe_path(@recipe), {:class=>"link-padded"} %>
-		<%= link_to 'Back', recipes_path, {:class=>"link-padded"} %>		
-	</div>
+	
+	</div>	
+</body>
 
-</div>
 
 
 

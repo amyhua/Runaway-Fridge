@@ -1,6 +1,5 @@
 class SearchesController < ApplicationController
   before_filter :find_search, :only => [:show, :edit, :update, :destroy]
-  before_filter :update_ingredients, :except => [:new, :create]
   
   # GET /searches
   # GET /searches.json
@@ -41,6 +40,14 @@ class SearchesController < ApplicationController
   # GET /searches/new.json
   def new
     @search = Search.new
+    @puns = [["I used to be so cool.","Runaway Fridge"],
+            ["Quick, or you'll never catch me!","Runaway Fridge"],
+            ["Buy someone a fridge for Christmas and watch their face light up when they open it!",
+            "Runaway Fridge"],
+            ["Facebook is like a fridge. When you're bored, you keep opening and closing it every few minutes to see if there's anything good in it.",
+            "Runaway Fridge"],
+            ["The Arctic Monkeys are hiding inside me.","Runaway Indie Fridge"],
+            ["Try as you might, but you can't catch me.","Runaway Fridge"]]
 
     #respond_to do |format|
     #  
@@ -91,9 +98,6 @@ class SearchesController < ApplicationController
   
   def find_search
     @search = Search.find(params[:id])
-  end
-  def update_ingredients
-    
   end
 
 
