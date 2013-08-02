@@ -1,11 +1,7 @@
-html{
-  /** background-image: url('eat.jpg');
-  background-size: cover;
-  background-repeat: repeat-x; **/
-}
 body{
   text-align: center;
   background-image: url('beer.jpg');
+  background-size: cover;
 }
 #new{
   position:absolute; 
@@ -18,12 +14,7 @@ body{
   font-size:4em;
   color:#990000;
 }
-#enter{
-  font-family:comic sans ms;
-}
-#query{
-  
-}
+
 #search_icon {
    margin:16px 8px;
 }
@@ -37,5 +28,4 @@ body{
   padding:20px;
   display: block;
   overflow: hidden;
- 
 }

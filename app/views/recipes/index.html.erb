@@ -1,23 +1,4 @@
-<h1>Listing recipes</h1>
+<h2>All Recipes</h2>
 
-<% @recipes.each do |recipe| %>
-<div class="right">
-<div class="row">
-  <div class="span3">
-    <div class="thumbnail">
-      <img alt="" src=<%=recipe.image%>>
-      <div class="caption">
-        <h3><%= recipe.title %></h3>
-        <p><%= recipe.ingredients.name%></p>
-        <p><a><%= recipe.time%></a> <a><%= recipe.rating%></a></p>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-<% end %>
+<%= render 'recipe_results' %>
 
-
-<br />
-
-<%= link_to 'New Recipe', new_recipe_path %>
