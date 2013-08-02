@@ -51,7 +51,6 @@ class SearchesController < ApplicationController
  
   # GET /searches/1/edit
   def edit
-    
   end
 
   # POST /searches
@@ -65,7 +64,6 @@ class SearchesController < ApplicationController
   # PUT /searches/1
   # PUT /searches/1.json
   def update
-    
     respond_to do |format|
       if @search.update_attributes(params[:search])
         format.html { redirect_to @search, notice: 'Search was successfully updated.' }
@@ -87,6 +85,7 @@ class SearchesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
   
   private
   
@@ -96,6 +95,7 @@ class SearchesController < ApplicationController
   def update_ingredients
     
   end
+
 
    #private
     #def check_ingredients

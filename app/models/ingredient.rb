@@ -1,7 +1,7 @@
 class Ingredient < ActiveRecord::Base
   attr_accessible :name
-
   has_many :quantities, :dependent => :delete_all
+
   has_many :recipes, :through => :quantities
 
   has_many :ingredients_searches

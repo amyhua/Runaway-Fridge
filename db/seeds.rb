@@ -6,8 +6,20 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+<<<<<<< HEAD
+hot_dogs = Recipe.create([{ title: 'Fabulous Hot Dogs'},
+                          { url: 'http://www.hotdogs.com'},
+                          { directions: '1. Cook hot dog, 2. eat'},
+                          { image: 'http://www.hotdogs.com/image'},
+                          { servings: 1 },
+                          { time: 10 },
+                          { rating: 5 },
+                          { reviewcount: 25 },
+                          ])
+=======
 require_relative 'seeds_helper'
 
+>>>>>>> be93e8a06ea5d7d41a0a089e289656c8dd6ce796
 
 root = Dir.pwd
 filepath = '/db/seed_ingredients.txt'
@@ -22,6 +34,42 @@ open(path) do |seed_ingredients|
   end  
 end
 
+<<<<<<< HEAD
+filepath2 = '/db/seed_recipes.txt'
+path2 = root + filepath2
+#Seed recipes data
+Recipe.delete_all
+open(path2) do |seed_recipes|
+  seed_recipes.read.each_line do |seed_recipe|
+    url, title = seed_recipe.split('|')
+    Recipe.create!(:title => title, :url => url)
+  end
+end
+
+#Seed ingredients and quantity
+Quantity.delete_all
+for each_recipe in Recipe.all
+  i = 0
+  ingredient_num = rand(1..3)
+  while i < ingredient_num do
+    i+=1
+    ingredient_id = Ingredient.find_by_name("apples").id+rand(0..165)
+    each_ingredient = Ingredient.find_by_id(ingredient_id)
+    each_recipe.ingredients.push(each_ingredient)
+    Quantity.create!(:recipe => each_recipe, :ingredient => each_ingredient, :content => "1lb")
+  end
+end
+#all_quantity = Quantity.all.uniq
+#Quantity.all = all_quantity
+
+
+
+
+
+
+
+
+=======
 # Seed recipes data
 
 # paths
@@ -104,3 +152,4 @@ open(directions) do |directions|
 end              
 
 =end
+>>>>>>> be93e8a06ea5d7d41a0a089e289656c8dd6ce796
