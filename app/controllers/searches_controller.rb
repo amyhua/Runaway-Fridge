@@ -16,7 +16,6 @@ class SearchesController < ApplicationController
   # GET /searches/1
   # GET /searches/1.json
   def show
-    
     # Get ingredient objects from Query string
     
     @query_arr = @search.query.split(",")
@@ -27,10 +26,11 @@ class SearchesController < ApplicationController
       @s.push(ing)
     end
     @search.update_attributes(params[:search])
-    #@recipes = Recipe.with_ingredient_in(@ingred_arr) # Recipe results
-   # @search = Search.find(params[:id])
-  #@results = Recipe.with_ingredient_in(@ingred_arr)
-
+    @recipes = []
+    for ing in @search.ingredients
+      @recipes.concat(ing.recipes)
+    end
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @search }

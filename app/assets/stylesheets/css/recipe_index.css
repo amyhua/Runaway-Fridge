@@ -8,8 +8,9 @@
     padding: 20px 20px;
     margin: 15px 10px;
     border: solid 1px;
-    border-color: #ddd;
     box-shadow: 6px 6px 5px #C7C7C7;
+    background-color: #E9E9E9;
+    border-color: #ddd;
 }
 .recipe-title {
     font-size: 24px;
@@ -20,5 +21,6 @@
     float: left;
 }
 .recipe:hover {
-    background-color: #E4E4E4;
+    background-color: #FFFFFF;
+    box-shadow: 12px 12px 5px #A7A7A7;
 }

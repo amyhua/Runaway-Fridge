@@ -1,6 +1,8 @@
 class RecipesController < ApplicationController
   # GET /recipes
   # GET /recipes.json
+  
+  before_filter :find_recipe, :only => [:show, :update, :edit, :destroy]
   def index
     @recipes = Recipe.all
 
@@ -13,8 +15,6 @@ class RecipesController < ApplicationController
   # GET /recipes/1
   # GET /recipes/1.json
   def show
-    @recipe = Recipe.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @recipe }
@@ -30,7 +30,6 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1/edit
   def edit
-    @recipe = Recipe.find(params[:id])
   end
 
   # POST /recipes
@@ -56,7 +55,6 @@ class RecipesController < ApplicationController
   # PUT /recipes/1
   # PUT /recipes/1.json
   def update
-    @recipe = Recipe.find(params[:id])
 
     respond_to do |format|
       if @recipe.update_attributes(params[:recipe])
@@ -73,7 +71,6 @@ class RecipesController < ApplicationController
   # DELETE /recipes/1
   # DELETE /recipes/1.json
   def destroy
-    @recipe = Recipe.find(params[:id])
     @recipe.destroy
 
     respond_to do |format|
@@ -84,5 +81,8 @@ class RecipesController < ApplicationController
   
   private
   
+  def find_recipe
+    @recipe = Recipe.find(params[:id])
+  end
   
 end

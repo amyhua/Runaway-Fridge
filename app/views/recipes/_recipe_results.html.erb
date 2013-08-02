@@ -1,0 +1,29 @@
+<% @recipes.each do |recipe| %>
+<a href="<%=recipe_url(recipe) %>">
+	
+	<div class="recipe" id="recipe-<%= recipe.id %>">
+		<div class="recipe-thumbnail">
+			<img class="recipe-thumbnail" src="<%= recipe.image %>" alt="<%= recipe.title %>">			
+		</div>		
+		<div class="recipe-title">
+			<%= recipe.title %>
+		</div>
+		<% unless recipe.rating.nil? %>
+		<div class="recipe-rating">
+			<%= recipe.rating %> out of 5 (<%= recipe.reviewcount %> Reviews)
+		</div>
+		<% end %>
+		<% unless recipe.time.nil? %>
+		<div class="recipe-time">
+			<%= recipe.time %>
+		</div>
+		<% end %>
+		<div class="recipe-ingredients">
+			<% recipe.ingredients.each do |ingred| %>
+				<div class="recipe-ingredients-list tokens results" id="<%= ingred.name %>"><%= ingred.name %></div>
+			<% end %>
+		</div>
+	</div>
+	
+</a>
+<% end %>
