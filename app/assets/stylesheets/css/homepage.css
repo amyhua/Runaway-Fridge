@@ -1,0 +1,19 @@
+.title-2 {
+    color: white;
+    
+    font-style: italic;
+    font-size: 55px;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+#enter {
+    color: rgb(151, 78, 44);
+    font-family: helvetica;
+    font-weight: normal;
+    font-style: italic;
+}
+
+#search_query {
+    font-style: italic;
+    font-family: courier;
+}

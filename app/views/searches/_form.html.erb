@@ -13,12 +13,12 @@
 
   <div class="field">
     <h3><%= f.label :query, "Don't know what to eat? List something tasty. We'll take care of the rest.", :id=>"enter" %></h3>
-    <h3><%= f.text_field :query, :size=>"50"%></h3>
+    <h3 class="form-input"><%= f.text_field :query, :size=>"50", :placeholder => "Main Ingredients"%></h3>
   </div>
   
   <div class="actions">
     <h3>
-    	<%= f.submit "Feeling Lucky", :class=>"btn btn-default btn-med", :id=>"search_icon" %>
+    	<%= f.submit "COOK ME", :class=>"btn btn-default btn-med", :id=>"search_icon" %>
     </h3>
 
 	<% end %>
