@@ -5,15 +5,8 @@
   <%= @search.query %>
 </div>
 <p>
-	<b>Results:</b>
-	<% @recipes.each do |recipe| %>
-  <tr>
-    <td><%= recipe.title %></td>
-    <td><%= link_to 'Show', recipe %></td>
-    <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-    <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-  <% end %>
+	
+	
 </p>
 
 <%= link_to 'Edit', edit_search_path(@search) %> |
