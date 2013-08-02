@@ -1,0 +1,24 @@
+.recipe-thumbnail {
+    width: 207px;
+}
+.recipe {
+    width: 250px;
+    height: auto;
+    float: left;
+    padding: 20px 20px;
+    margin: 15px 10px;
+    border: solid 1px;
+    border-color: #ddd;
+    box-shadow: 6px 6px 5px #C7C7C7;
+}
+.recipe-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #E0B400;
+}
+.recipe-ingredients-list.tokens.results {
+    float: left;
+}
+.recipe:hover {
+    background-color: #E4E4E4;
+}

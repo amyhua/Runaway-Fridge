@@ -36,9 +36,6 @@
 		</div>
 		<div class="middle-detail" id="ingredients">
 			<ul>
-				
-				<%= @recipe.quantities.count %>, 
-				<%= @recipe.ingredients.count %>
 			<% @recipe.quantities.each do |quantity| %>
 				<li class="quantity-content tokens"><%= quantity.content %></li>
 			<% end %>
