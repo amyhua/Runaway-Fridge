@@ -24,3 +24,14 @@
     background-color: #FFFFFF;
     box-shadow: 12px 12px 5px #A7A7A7;
 }
+.result-ingredients-list.tokens {
+    float: left;
+}
+
+.recipe-results {
+    float: left;
+}
+.result-ingredients-all {
+    float: left;
+    margin: 10px 10px;
+}

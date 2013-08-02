@@ -6,6 +6,8 @@
 
 
 
+
+
 .link-padded {
     float: right;
     padding: 10px 50px;
@@ -100,7 +102,7 @@
 
 .tokens {
     color: #ddd;
-    background-color: #000000;
+    background-color: #414141;
     margin-top: 8px;
     margin-right: 9px;
     font-size: 12px;
@@ -111,6 +113,7 @@
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 5px;
+    float: left;
 }
 #recipe-time {
     color: #ddd;
@@ -142,4 +145,13 @@
 #recipe-rating {
     font-size: 18px;
     font-weight: bold;
+}
+
+.result-ingredients.result.tokens:hover {
+    background-color: #ddd;
+    color: #414141;
+}
+.result-ingredients.result.tokens {}
+.result-ingredients.result.tokens {
+    background-color: #414141;
 }

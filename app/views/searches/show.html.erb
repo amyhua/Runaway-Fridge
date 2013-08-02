@@ -1,4 +1,29 @@
 <%= render 'form' %>
 <p id="notice"><%= notice %></p>
 
-<%= render 'recipe_results' %>
+<h3><%= @recipes.count %> recipe results</h3>
+
+<span class="recipe-ingredients-label-1">...and their ingredients.
+</span>
+<span class="recipe-ingredients-label-2">Click on an ingredient to filter
+	it out of your search results.
+</span>
+
+<div class="result-ingredients-all">
+	<% @ingredients = [] %>
+	<% for recipe in @recipes %>
+		<% for ingredient in recipe.ingredients %>
+			<% @ingredients.push(ingredient) %>
+		<% end %>
+	<% end %>
+	<% @ingredients.uniq!.sort! { |a,b| a<=>b } %>
+	<% for ing in @ingredients %>
+		<div class="result-ingredients result tokens">
+			<%= ing.name %>		
+		</div>
+	<% end %>
+</div>
+<br /><br />
+<div class="recipe-results">	
+	<%= render 'recipe_results' %>
+</div>
