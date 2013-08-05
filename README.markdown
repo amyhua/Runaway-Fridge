@@ -15,7 +15,6 @@ build a Shopping List, and save your ingredient filters.
 
 Runaway Fridge will be live on www.runawayfridge.com some time in late 2013.
 
-Developed, designed, and maintained by Amy Hua.
 
 ##Resources
 
