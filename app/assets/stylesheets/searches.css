@@ -1,0 +1,52 @@
+body{
+  background-image: url('fridge.jpg');
+  background-size: cover;
+}
+
+.title-2 {
+    text-align: center;
+}
+#new_search {
+    text-align: center;
+}
+
+
+#new{
+  position:absolute; 
+  top:20%;  
+  left:30%;  
+}
+
+#title{
+  font-family:KINO MT;
+  font-size:4em;
+  color:#990000;
+}
+
+#search_icon {
+   margin:16px 8px;
+}
+.thumbnail{
+  height:400px;
+}
+.right{
+  width: 20%;
+  float: left;
+  min-height: 10px;
+  padding:20px;
+  display: block;
+  overflow: hidden;
+}
+
+.search-prompt {
+    text-align: center;
+}
+#enter {
+}
+#enter {}
+.form-input {
+    text-align: center;
+}
+.actions {
+    text-align: center;
+}

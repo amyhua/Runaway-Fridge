@@ -1,0 +1,13 @@
+<li class="control-group nested-fields">
+  <div class="controls">
+    <%= f.label :content, "Ingredient Text (including Amount):" %>
+    <%= f.text_field :content %>
+
+	<%= f.label :name, "Ingredient Name" %> 
+    <%= f.fields_for :ingredient do |quantity_ingredient| %>
+      <%= quantity_ingredient.text_field :name %>
+   <% end %>
+ 
+    <%= link_to_remove_association "Remove", f %>
+  </div>
+</li>

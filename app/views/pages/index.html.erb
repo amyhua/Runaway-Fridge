@@ -1,0 +1,13 @@
+<%= form_tag root_path :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => "search" %>
+  </p>
+<% end %>
+
+
+form_for (@search) do |f|
+..
+f.text_area :query
+...
+
