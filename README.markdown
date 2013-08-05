@@ -17,7 +17,7 @@ Runaway Fridge will be live on www.runawayfridge.com some time in late 2013.
 
 Developed, designed, and maintained by Amy Hua.
 
-##Development Details:
+##Resources
 
 Runaway Fridge is based upon Rails 3.2.13 on Ruby 2.0.0 and utilizes a many-to-many model among
 Recipes, Ingredients, and Searches, whereby
