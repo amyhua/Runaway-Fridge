@@ -11,7 +11,7 @@ you listed. It also displays a list of ingredients contained across all the reci
 and you can choose to filter out ingredients you don't have / don't like.
 
 In future iterations of Runaway Fridge, you can also save your recipe results,
-build a Shopping List, and save your ingredient filters.
+build a Shopping List, save your ingredient filters, get a Print version, and find substitute ingredients.
 
 Runaway Fridge will be live on www.runawayfridge.com some time in late 2013.
 
