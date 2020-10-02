@@ -5,7 +5,7 @@ The emphasis is on cooking with what you have and preventing trips to the grocer
 Sometimes you can cook chicken without needing to run to the store for olive oil; you 
 can make stew without needing butter; and so forth.
 
-The first prompt asks you to list some main ingredients you might want to eat.
+The first prompt asks you to list some main ingredients you might want to eat in any wear.
 The search engine then aggregates recipes that contain at least one of those main ingredients
 you listed. It also displays a list of ingredients contained across all the recipes on your results page,
 and you can choose to filter out ingredients you don't have / don't like.
