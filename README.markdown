@@ -3,12 +3,12 @@
 Runaway Fridge is a common-sense take on searching for recipes online.
 The emphasis is on cooking with what you have and preventing trips to the grocery store.
 Sometimes you can cook chicken without needing to run to the store for olive oil; you 
-can make stew without needing butter; and so forth.
+can make a stew without needing butter; and so forth.
 
 The first prompt asks you to list some main ingredients you might want to eat.
 The search engine then aggregates recipes that contain at least one of those main ingredients
 you listed. It also displays a list of ingredients contained across all the recipes on your results page,
-and you can choose to filter out ingredients you don't have / don't like.
+and you can choose to filter out the ingredients you don't have / don't like.
 
 In future iterations of Runaway Fridge, you can also save your recipe results,
 build a Shopping List, save your ingredient filters, get a Print version, and find substitute ingredients.
